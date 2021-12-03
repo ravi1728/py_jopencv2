@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.edunomics.drawsiness_det"
-        minSdkVersion 21
+        minSdkVersion 26
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
@@ -32,16 +32,23 @@ android {
 //                install "D:/1_Data/whl/chaquo/opencv_python-4.1.2.30-1-cp38-cp38-android_16_armeabi_v7a.whl"
 //                install "D:/1_Data/whl/chaquo/dlib-19.19.0-4-cp38-cp38-android_16_armeabi_v7a.whl"
                 install "/home/ravi/Desktop/chaquo/numpy-1.17.4-3-cp38-cp38-android_16_armeabi_v7a.whl"
-                install "/home/ravi/Desktop/chaquo/scipy-1.4.1-0-cp38-cp38-android_16_armeabi_v7a.whl"
+//                install "/home/ravi/Desktop/chaquo/scipy-1.4.1-0-cp38-cp38-android_16_armeabi_v7a.whl"
                 install "/home/ravi/Desktop/chaquo/opencv_python-4.1.2.30-1-cp38-cp38-android_16_armeabi_v7a.whl"
 //                install "~/Desktop/chaquo/"
 
-                install "imutils"
+                install "/home/ravi/Desktop/chaquo/imutils-0.5.3-py3-none-any.whl"
+                install "/home/ravi/Desktop/chaquo/scipy-1.4.1-0-cp38-cp38-android_16_armeabi_v7a.whl"
+//                install "scipy==0.19.0"
 
             }
         }
         ndk {
             abiFilters "armeabi-v7a"
+        }
+        externalNativeBuild {
+            cmake {
+                cppFlags ''
+            }
         }
 
 
@@ -52,6 +59,21 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    ndkVersion '23.1.7779620'
+//    externalNativeBuild {
+//        cmake {
+//            path file('src/main/cpp/CMakeLists.txt')
+//            version '3.10.2'
+//        }
+//    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dependenciesInfo {
+        includeInApk true
+        includeInBundle true
     }
 }
 
